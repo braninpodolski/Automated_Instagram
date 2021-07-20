@@ -10,7 +10,7 @@ def bot():
     acc = config['preferences']['account']
 
     # Clear cookies for login
-    cookie_del = glob.glob("/*/*/*/AutomatedInstagram/config/*cookie.json")
+    cookie_del = glob.glob("/*/*/*/Automated_Instagram-master/config/*cookie.json")
     if cookie_del:
         os.remove(cookie_del[0])
 

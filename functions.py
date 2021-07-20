@@ -18,7 +18,7 @@ def upload():
     acc = config['login']['username']
 
     # Clear cookies for login
-    cookie_del = glob.glob("/*/*/*/AutomatedInstagram/config/*cookie.json")
+    cookie_del = glob.glob("/*/*/*/Automated_Instagram-master/config/*cookie.json")
     if cookie_del:
         os.remove(cookie_del[0])
 
@@ -46,8 +46,8 @@ def upload():
     
     # Fetch filename and profile username
     path = ('#' + hashtag + '/')
-    for file in glob.glob('/*/*/*/AutomatedInstagram/*/*.json'):
-        if file != f'/*/*/*/AutomatedInstagram/#{hashtag}/#{hashtag}.json' and '_uuid_and_cookie' not in file:
+    for file in glob.glob('/*/*/*/Automated_Instagram-master/*/*.json'):
+        if file != f'/*/*/*/Automated_Instagram-master/#{hashtag}/#{hashtag}.json' and '_uuid_and_cookie' not in file:
             with open(file, 'r') as file:
                 data = json.load(file)
                 profileid = str(data['node']['owner']['id'])
@@ -56,12 +56,12 @@ def upload():
 
             
     # Upload and Delete directory
-    for file in glob.glob('/*/*/*/AutomatedInstagram/*/*.jpg'):
+    for file in glob.glob('/*/*/*/Automated_Instagram-master/*/*.jpg'):
         im = Image.open(file)
         newsize = (1080, 1080)
         im1 = im.resize(newsize)
         im1.save(f'#{hashtag}.jpg')
         bot.upload_photo(f'#{hashtag}.jpg', caption='Source: @' + profile.username + caption)
-        shutil.rmtree(f'/*/*/*/AutomatedInstagram/#{hashtag}')
+        shutil.rmtree(f'/*/*/*/Automated_Instagram-master/#{hashtag}')
         os.remove(f'#{hashtag}.jpg.REMOVE_ME')
         break
