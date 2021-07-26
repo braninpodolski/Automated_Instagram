@@ -391,3 +391,14 @@
 2021-07-26 10:51:59,061 - instabot version: 0.117.0 (bot_follow) - INFO - Followed `user_id` 1558883866.
 2021-07-26 10:51:59,062 - instabot version: 0.117.0 (bot_follow) - INFO - Going to follow `user_id` 13704294.
 2021-07-26 10:52:14,559 - instabot version: 0.117.0 (api) - DEBUG - post data: {"user_id": "13704294", "radio_type": "wifi-none", "device_id": "android-68432cc8cb3ab8e9", "_uuid": "887dc5c8-015b-43cb-8623-ffa985144b0d", "_uid": "48793800613", "_csrftoken": "qEnwhAFtCp4evx5hp36juDV07sIuc6XM"}
+2021-07-26 10:52:15,576 - instabot version: 0.117.0 (api) - DEBUG - POST to endpoint: friendships/create/13704294/ returned response: <Response [200]>
+2021-07-26 10:52:15,576 - instabot version: 0.117.0 (bot_follow) - INFO - Followed `user_id` 13704294.
+2021-07-26 10:52:15,577 - instabot version: 0.117.0 (bot_follow) - INFO - Going to follow `user_id` 33981281140.
+2021-07-26 10:52:35,347 - instabot version: 0.117.0 (api) - DEBUG - post data: {"user_id": "33981281140", "radio_type": "wifi-none", "device_id": "android-68432cc8cb3ab8e9", "_uuid": "887dc5c8-015b-43cb-8623-ffa985144b0d", "_uid": "48793800613", "_csrftoken": "qEnwhAFtCp4evx5hp36juDV07sIuc6XM"}
+2021-07-26 10:52:35,975 - instabot version: 0.117.0 (api) - DEBUG - POST to endpoint: friendships/create/33981281140/ returned response: <Response [200]>
+2021-07-26 10:52:35,975 - instabot version: 0.117.0 (bot_follow) - INFO - Followed `user_id` 33981281140.
+2021-07-26 10:52:35,976 - instabot version: 0.117.0 (bot_follow) - INFO - Going to follow `user_id` 42833796469.
+2021-07-26 10:52:45,947 - instabot version: 0.117.0 (api) - DEBUG - post data: {"user_id": "42833796469", "radio_type": "wifi-none", "device_id": "android-68432cc8cb3ab8e9", "_uuid": "887dc5c8-015b-43cb-8623-ffa985144b0d", "_uid": "48793800613", "_csrftoken": "qEnwhAFtCp4evx5hp36juDV07sIuc6XM"}
+2021-07-26 10:52:47,190 - instabot version: 0.117.0 (api) - DEBUG - POST to endpoint: friendships/create/42833796469/ returned response: <Response [200]>
+2021-07-26 10:52:47,191 - instabot version: 0.117.0 (bot_follow) - INFO - Followed `user_id` 42833796469.
+2021-07-26 10:52:47,191 - instabot version: 0.117.0 (bot_follow) - INFO - Going to follow `user_id` 4454847613.
