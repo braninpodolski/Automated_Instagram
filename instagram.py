@@ -5,11 +5,17 @@ from configparser import RawConfigParser
 import sys
 from art import *
 import os
+import glob
 
 # Import config preferences
 file = 'config.ini'
 config = RawConfigParser()
 config.read(file)
+
+# Clear cookies for login
+cookie_del = glob.glob("/*/*/*/Automated_Instagram-master/config/*cookie.json")
+if cookie_del:
+    os.remove(cookie_del[0])
 
 # Config Setup Function
 def config_setup():
@@ -26,9 +32,22 @@ def config_setup():
     config.set('login', 'password', passw)
     os.system('clear')
 
-    hashtag = input('Hashtag to Scrape Posts From (DO NOT INCLUDE POUND SYMBOL): ')
-    config.set('preferences', 'hashtag', hashtag.replace('#', '')) 
-    os.system('clear')
+    source = ''
+
+    while source != 'instagram' and source != 'reddit':
+        source = input('What Platform to Source from (Instagram or Reddit): ').lower()
+        config.set('preferences', 'source', source)
+        os.system('clear')
+
+    if source == 'instagram':
+        hashtag = input('Hashtag to Scrape Posts From (DO NOT INCLUDE POUND SYMBOL): ')
+        config.set('preferences', 'hashtag', hashtag.replace('#', '')) 
+        os.system('clear')
+
+    elif source == 'reddit':
+        subreddit = input('Subreddit to pull posts from: ')
+        config.set('preferences', 'subreddit', subreddit)
+        os.system('clear')
 
     caption = input('Paste List of Hashtags for Caption Template: ')
     config.set('preferences', 'caption_tags', caption)
@@ -60,26 +79,42 @@ def console():
     5. Clear   -  Clear the terminal
     ''')
 
-console()
+if len(sys.argv) < 2:
+    console()
+    # Menu Input Interface
+    while True:
 
-# Menu Input Interface
-while True:
-    command = input('Enter Command: ')
-    
-    if command.lower() in ['config', '1']:
-        config_setup()
-        console()
-    elif command.lower() in ['upload', '2']:
-        upload()
-        None
-    elif command.lower() in ['follow', '3']:
-        bot()
-        None
-    elif command.lower() in ['exit', '4']:
-        os.system('clear')
-        break
-    elif command.lower() in ['clear', '5']:
-        os.system('clear')
-        console()
-    else:
-        print('Command Not Recognized') 
+        # Clear cookies for login
+        cookie_del = glob.glob("/*/*/*/Automated_Instagram-master/config/*cookie.json")
+        if cookie_del:
+            os.remove(cookie_del[0])
+
+        
+        command = input('Enter Command: ')
+        
+        if command.lower() in ['config', '1']:
+            config_setup()
+            console()
+        elif command.lower() in ['upload', '2']:
+            upload()
+            None
+        elif command.lower() in ['follow', '3']:
+            bot()
+            None
+        elif command.lower() in ['exit', '4']:
+            os.system('clear')
+            break
+        elif command.lower() in ['clear', '5']:
+            os.system('clear')
+            console()
+        else:
+            print('Command Not Recognized') 
+else:
+    if sys.argv[1] == '-cli':
+        if sys.argv[2] == '-up':
+            upload()
+        elif sys.argv[2] == '-fol':
+            bot()
+        else:
+            None
+

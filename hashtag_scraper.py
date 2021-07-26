@@ -3,6 +3,7 @@ import datetime
 import instaloader
 import instaloader.structures
 from datetime import date
+from random import randrange
 
 def main(hashtag):
     loader = Instaloader()
@@ -15,10 +16,12 @@ def main(hashtag):
     loader.compress_json = False
     hashtag1 = instaloader.Hashtag.from_name(loader.context, hashtag)
     for post in hashtag1.get_top_posts():
+        rando = randrange(0,8)
         curdate = date.today()
-        #if str(post.date)[:10] == str(curdate.isoformat()):
-        loader.download_post(post, target=f'#{hashtag}')
-        print(post.date)
-        break
+        if rando == 1:
+            loader.download_post(post, target=f'#{hashtag}')
+            print(post.date)
+            break
+        
 # hashtag = input('Hashtag: ')
 #main('portrait')
