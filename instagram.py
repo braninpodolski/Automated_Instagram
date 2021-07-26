@@ -6,6 +6,8 @@ import sys
 from art import *
 import os
 import glob
+from time import sleep
+import datetime
 
 # Import config preferences
 file = 'config.ini'
@@ -115,6 +117,18 @@ else:
             upload()
         elif sys.argv[2] == '-fol':
             bot()
+        elif sys.argv[2] == '-con':
+        
+            while True:
+                time = datetime.datetime.now()
+                hr = time.hour
+
+                if hr == 8 or hr == 20:
+                    upload()
+                else:
+                    os.system('clear')
+                    print(f'Current Time: {hr}')
+            
         else:
             None
 
