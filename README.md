@@ -1,5 +1,14 @@
 # Automated_Instagram
 
+# Installation
+To install AutoInsta, run the following commands:
+
+`git clone https://github.com/braninpodolski/Automated_Instagram`
+
+`cd Automated_Instagram-master`
+
+`sudo python3 setup.py install`
+
 # How to Use
 To get started, run `python3 instagram.py` within the AutomatedInstagram directory.
 
