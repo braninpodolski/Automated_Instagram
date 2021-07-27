@@ -1,0 +1,7 @@
+README.md
+setup.py
+AutomatedInstagram.egg-info/PKG-INFO
+AutomatedInstagram.egg-info/SOURCES.txt
+AutomatedInstagram.egg-info/dependency_links.txt
+AutomatedInstagram.egg-info/requires.txt
+AutomatedInstagram.egg-info/top_level.txt

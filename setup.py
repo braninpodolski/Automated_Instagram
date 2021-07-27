@@ -8,5 +8,5 @@ setup(
     author='Branin Podolski',
     author_email='marshallbranin@gmail.com',
     url='https://github.com/braninpodolski/Automated_Instagram',
-    packages=['instabot', 'instaloader', 'configparser', 'glob']
+    install_requires=['instabot', 'instaloader', 'configparser', 'art', 'praw']
 )

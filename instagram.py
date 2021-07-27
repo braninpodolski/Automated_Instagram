@@ -122,9 +122,30 @@ else:
             while True:
                 time = datetime.datetime.now()
                 hr = time.hour
+                min = time.minute
 
-                if hr == 8 or hr == 20:
-                    upload()
+                if (hr == 8 or hr == 20) and min == 0:
+                    try:
+                        upload()
+                        sleep(60)
+                    except:
+                        print('Upload Failed.')
+                else:
+                    os.system('clear')
+                    print(f'Current Time: {hr}')
+        
+        elif sys.argv[2] == '-confol':
+            while True:
+                time = datetime.datetime.now()
+                hr = time.hour
+                min = time.minute
+
+                if hr == 21 and min == 3:
+                    try:
+                        bot()
+                        sleep(60)
+                    except:
+                        print('Follow Script Failed. Trying again tomorrow.')
                 else:
                     os.system('clear')
                     print(f'Current Time: {hr}')
