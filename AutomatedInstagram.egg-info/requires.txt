@@ -1,5 +1,0 @@
-instabot
-instaloader
-configparser
-art
-praw
