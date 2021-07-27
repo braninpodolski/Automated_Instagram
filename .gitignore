@@ -1,1 +1,7 @@
 config.ini
+AutoInsta.code-workspace
+config
+.DS_store
+build
+dist
+AutomatedInstagram.egg-info
