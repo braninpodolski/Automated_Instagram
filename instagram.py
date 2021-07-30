@@ -130,7 +130,7 @@ else:
                 hr = time.hour
                 min = time.minute
 
-                if min == 0:
+                if (hr == 8 or hr == 21) and min == 0:
                     try:
                         upload()
                         sleep(60)
