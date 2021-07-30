@@ -14,7 +14,7 @@ def download_subreddit(sub):
     reddit.read_only=True
 
     # Iterate through top submissions
-    for submission in praw.reddit.Subreddit(reddit, display_name=f"{sub}").hot(limit=None):
+    for submission in praw.reddit.Subreddit(reddit, display_name=f"{sub}").new(limit=None):
 
         # Get the link of the submission
         url = str(submission.url)

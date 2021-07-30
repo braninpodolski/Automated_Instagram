@@ -16,7 +16,7 @@ def bot():
 
     bot = Bot(
         max_follows_per_day=100,
-        follow_delay=30
+        follow_delay=90
     )
     bot.login(username=config['login']['username'], password=config['login']['password'])
 

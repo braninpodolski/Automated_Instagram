@@ -8,6 +8,7 @@ import os
 import glob
 from time import sleep
 import datetime
+import shutil
 
 # Import config preferences
 file = 'config.ini'
@@ -79,6 +80,7 @@ def console():
     3. Follow  -  Automatically follow accounts from different account
     4. Exit    -  Exit the terminal
     5. Clear   -  Clear the terminal
+    6. Fix     -  Fix DS_User Error
     ''')
 
 if len(sys.argv) < 2:
@@ -109,6 +111,10 @@ if len(sys.argv) < 2:
         elif command.lower() in ['clear', '5']:
             os.system('clear')
             console()
+        elif command.lower() in ['fix', '6']:
+            shutil.rmtree('config')
+            os.system('clear')
+            console()
         else:
             print('Command Not Recognized') 
 else:
@@ -124,7 +130,7 @@ else:
                 hr = time.hour
                 min = time.minute
 
-                if (hr == 8 or hr == 20) and min == 0:
+                if min == 0:
                     try:
                         upload()
                         sleep(60)
@@ -132,7 +138,7 @@ else:
                         print('Upload Failed.')
                 else:
                     os.system('clear')
-                    print(f'Current Time: {hr}')
+                    print(f'Current Time: {hr}:{min}')
         
         elif sys.argv[2] == '-confol':
             while True:

@@ -23,7 +23,7 @@ def upload():
     caption = f'''\n
     -------------------
     \n
-    Follow @{acc} for Daily Posts🏠
+    Follow @{acc} for Daily Posts 🏠
     \n
     -------------------
     Follow @{acc} 🏠
@@ -60,13 +60,21 @@ def upload():
                     profile = Profile.from_id(instaload.context,profile_id= profileid)
 
             
+        # Download account most recent upload
+        loader = Instaloader()
+        user_posts = Profile.get_posts()
+        loader.download_post(user_posts[0], target='confirmation')
+
         # Upload and Delete directory
         for file in glob.glob('/*/*/Automated_Instagram-master/*/*.jpg'):
             im = Image.open(file)
             newsize = (1080, 1080)
             im1 = im.resize(newsize)
             im1.save(f'#{hashtag}.jpg')
-            bot.upload_photo(f'#{hashtag}.jpg', caption='Source: @' + profile.username + caption)
+            if open(f'#{hashtag}.jpg', 'rb') == open('confirmation.jpg', 'rb'):
+                bot.upload_photo(f'#{hashtag}.jpg', caption='Source: @' + profile.username + caption)
+            else:
+                print('No new post. Skipping.')
             break
 
         shutil.rmtree(f'#{hashtag}')
