@@ -1,4 +1,6 @@
 # Automated_Instagram
+# Status
+Due to updates to Instagram's website, this project no longer functions and is not being actively maintained.
 
 # Installation
 To install AutoInsta, run the following commands:
